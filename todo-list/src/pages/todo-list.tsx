@@ -5,12 +5,12 @@ import Form from "../components/Form";
 import Input from "../components/Input";
 import List from "../components/List";
 
+import { useStore } from "../store";
 import "./todo-list.css";
 
 function Todo() {
   const [task, setTask] = useState("");
-  const [itemsList, setItemsList] = useState<any[]>([]);
-
+  const {list, add} = useStore()
   function handleChangeInput(event: React.ChangeEvent<HTMLInputElement>) {
     const inputTask = event.target.value;
 
@@ -24,7 +24,7 @@ function Todo() {
       return;
     }
 
-    setItemsList([...itemsList, task]);
+    add(task)
     setTask("");
   }
 
@@ -42,7 +42,7 @@ function Todo() {
         <Button type="submit">Adicionar</Button>
       </Form>
 
-      <List itemsList={itemsList} />
+      <List itemsList={list || []} />
     </div>
   );
 }

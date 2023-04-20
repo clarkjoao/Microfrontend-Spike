@@ -11,8 +11,9 @@ export default defineConfig({
       filename: "todoList.js", // output
       exposes: {
         "./TodoList": "./src/pages/todo-list",
+        "./TodoStore": "./src/store",
       },
-      shared: ["react", "react-dom"],
+      shared: ["react", "react-dom", 'react-redux', '@reduxjs/toolkit'],
     }),
   ],
   build: {

@@ -11,7 +11,7 @@ export default defineConfig({
       remotes: {
         TodoListApp: "http://localhost:3001/assets/todoList.js",
       },
-      shared: ["react", "react-dom"],
+      shared: ["react", "react-dom", 'react-redux', '@reduxjs/toolkit'],
     }),
   ],
   build: {
