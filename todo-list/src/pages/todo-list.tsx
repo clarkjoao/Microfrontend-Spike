@@ -7,7 +7,7 @@ import List from "../components/List";
 
 import "./todo-list.css";
 
-function Todo() {
+function Todo({title = 'Todo List'}) {
   const [task, setTask] = useState("");
   const [itemsList, setItemsList] = useState<any[]>([]);
 
@@ -30,7 +30,7 @@ function Todo() {
 
   return (
     <div className="todo-wrapper">
-      <h1>ToDo List</h1>
+      <h1>{title}</h1>
       <Form onSubmit={handleAddItemToList}>
         <Input
           type="text"
