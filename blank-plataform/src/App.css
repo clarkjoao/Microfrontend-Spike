@@ -48,3 +48,18 @@
   flex-direction: row;
   justify-content: space-around;
 }
+
+header {   
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+
+  background-color: #6f42c1;
+
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+  color: white;
+}
